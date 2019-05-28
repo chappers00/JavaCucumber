@@ -2,7 +2,7 @@
 
 This is a template test harness project with [Cucumber](https://cucumber.io/) and [Selenium](https://www.seleniumhq.org/)
 
-[![Build Status](https://dev.azure.com/ecsdigital-kickstart/JavaCucumber/_apis/build/status/ecsdigital-kickstart.JavaCucumber?branchName=master)](https://dev.azure.com/ecsdigital-kickstart/JavaCucumber/_build/latest?definitionId=1?branchName=master)
+[![Build Status](https://dev.azure.com/ecsdigital/cucumber-container-ci/_apis/build/status/ecsdigital.JavaCucumber?branchName=master)](https://dev.azure.com/ecsdigital/cucumber-container-ci/_build/latest?definitionId=6&branchName=master)
 
 ## TLDR
 Linux / Mac:

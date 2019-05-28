@@ -15,16 +15,15 @@ public class GoogleResultsPage {
 
     public boolean hasResultTitled(String expectedTitle) {
         LOGGER.info("Found {} search results",results.size());
-        boolean matchingTitle = false;
-                for(WebElement result :results)
-                {
-                    String resultTitle = result.getText();
-                    LOGGER.info("Looking at {}", resultTitle);
-                    if (resultTitle.equalsIgnoreCase(expectedTitle)) {
-                        LOGGER.info("{} matches {}", resultTitle, expectedTitle);
-                        return true;
-                    }
-                }
+        for(WebElement result :results)
+        {
+            String resultTitle = result.getText();
+            LOGGER.info("Looking at {}", resultTitle);
+            if (resultTitle.equalsIgnoreCase(expectedTitle)) {
+                LOGGER.info("{} matches {}", resultTitle, expectedTitle);
+                return true;
+            }
+        }
 
         LOGGER.warn("Didn't get a match for "+expectedTitle);
         return false;

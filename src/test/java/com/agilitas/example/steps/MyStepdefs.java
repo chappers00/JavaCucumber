@@ -1,6 +1,7 @@
 package com.agilitas.example.steps;
 
 import com.agilitas.example.GoogleResultsPage;
+import com.agilitas.example.GoogleSearchSettingsPage;
 import com.agilitas.example.SeleniumUtils;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -65,6 +66,11 @@ public class MyStepdefs implements En {
 
     public MyStepdefs() {
         Given("^I've opened the google home page$", () -> {
+            //First we need to set the language. When tests run on a non-UK CI server you might
+            //Get results in different languages which cause the test to fail
+            driver.get("https://www.google.com/preferences?hl=en-GB&fg=1#languages");
+            GoogleSearchSettingsPage settingsPage = PageFactory.initElements(driver, GoogleSearchSettingsPage.class);
+            settingsPage.selectEnglish();
             driver.get("https://www.google.com");
             SeleniumUtils.waitForElementVisible(driver, By.cssSelector("input[name='q']"));
         });
